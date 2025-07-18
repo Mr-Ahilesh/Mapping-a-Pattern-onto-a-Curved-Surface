@@ -91,13 +91,7 @@ warped_flag = cv2.warpPerspective(
     flags=cv2.INTER_LINEAR
 )
 
-# contour mask 
-# ... [previous code remains unchanged until the blending step] ...
 
-# =============================================
-# 7. Adjustable Transparency Blending
-# =============================================
-# Create mask from contour
 mask = np.zeros_like(original_img[:, :, 0])
 cv2.fillPoly(mask, [largest_contour.astype(np.int32)], 255)
 
